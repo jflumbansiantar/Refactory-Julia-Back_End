@@ -59,8 +59,10 @@ func main() {
    }
 
    	res, _ := json.MarshalIndent(prods,"","   ")
-   
+
    	fmt.Printf("%s\n",res)
+
+
 }
 
 var CsvFile = strings.NewReader(`Name,Category,Price
@@ -70,3 +72,4 @@ Samsung Galaxy J7,Smartphone,3549000
 DELL XPS 13,Laptop,26799000
 Xiaomi Mi 6,Smartphone,5399000
 LG V30 Plus,Smartphone,10499000`)
+

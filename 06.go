@@ -16,15 +16,25 @@
 // list_letters_second = Y
 // ```
 
-package main 
+package main
+
 import (
 	"fmt"
-	
 )
 
 func MissingLetter(s string) {
+	/**PSEUDOCODE
+	make a variable that contains all the alphabetic characters (does Golang has it ?)
+	lowercase all the letters
+	compare part of the alphabetic characters = letters
+	if something a miss from the part of the alphabetic characters, print that missing letter
+
+	*/
+
 }
 
-func main () {
-	
+func main() {
+	var unit = "abde"
+
+	fmt.Println(MissingLetter(unit))
 }

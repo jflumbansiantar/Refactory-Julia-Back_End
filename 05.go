@@ -29,14 +29,13 @@ func Counting(str string) map[string]int {
 
 		counts := make(map[string]int)
 		for _, char := range letters {
-			
 			_, matched := counts[char]
-
+			
 			if matched {
-				counts[char] += '*'
+				counts[char] += 1
 				
 			} else {
-				counts[char] = '*'
+				counts[char] = 1
 			}
 		}
 		return (counts)
@@ -44,7 +43,9 @@ func Counting(str string) map[string]int {
 }
 
 func main () {
-	var input = "Mammals is"
+	var input = "WHite whalE"
+	result := Counting(input)
+	delete(result, " ")
 
-	fmt.Println(Counting(input))
+	fmt.Println(result)
 }

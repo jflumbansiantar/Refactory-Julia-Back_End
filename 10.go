@@ -106,10 +106,17 @@ import (
 	"os"
 )
 
-
+type Data struct {
+	userId string
+	id string
+	title string
+	body string
+	user string
+}
 
 func main() {
-response1, err := http.Get("https://jsonplaceholder.typicode.com/posts")
+
+	response1, err := http.Get("https://jsonplaceholder.typicode.com/posts")
 	if err != nil {
 		fmt.Print(err.Error())
 		os.Exit(1)
@@ -129,7 +136,33 @@ response1, err := http.Get("https://jsonplaceholder.typicode.com/posts")
 	if err != nil {
 		log.Fatal(err)
 	}
-	// fmt.Println(string(responseData2))
+	fmt.Println(string(responseData2))
 
+	//PSEUDOCODE-nya
+	/**
+	if responseData1.userId = responseData2.id {
+		populate["user"]
+	} 
+	*/
+
+	// if strings.Contains(responseData1.userId) = string(responseData2.id) {
+	// 	return fmt.Sprin)
+	// }
+
+	// bMap := make(map[string]responseData2)
+
+	// for _, b := range responseData2 {
+	// 	bMap[b.id] = b
+	// }
+
+	// merged := make([]responseData1, len(responseData1))
+	// for i, a := range responseData1 {
+	// 	if b, ok := bMap[a.userId]; ok {
+	// 		a.userId = b.id
+	// 	}
+	// 	merged[i] = a
+	// }
+	// return merged
 	
+
 }
