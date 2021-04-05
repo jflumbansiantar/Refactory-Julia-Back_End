@@ -11,10 +11,11 @@
 package main 
 import (
 	"fmt"
+	"math"
 )
 
 func GroupBy(input int) {
-	var even, odd, five []int
+	var even, odd, five, prime, primeLess []int
 	
 	for i := 1; i <= input; i++ {
 		if i%5 == 0 {
@@ -25,11 +26,37 @@ func GroupBy(input int) {
 		} 
 		if i%2 != 0{
 			odd = append(odd, i)
-		}	
+		}
+		if i <= input {
+			isPrime := true
+			for j := 2; j <= int(math.Sqrt(float64(i))); j++ {
+				if i%j == 0 {
+					isPrime = false
+					break
+				}
+			}
+			if isPrime {
+				prime = append(prime, i)
+			}
+		}
+		if i <= 100 {
+			isPrime := true
+			for j := 2; j <= int(math.Sqrt(float64(i))); j++ {
+				if i%j == 0 {
+					isPrime = false
+					break
+				}
+			}
+			if isPrime {
+				primeLess = append(primeLess, i)
+			}
+		}
 	}
-	fmt.Println(even)
-	fmt.Println(odd)
-	fmt.Println(five)
+	fmt.Println(even, "even")
+	fmt.Println(odd, "odd")
+	fmt.Println(five, "five")
+	fmt.Println(prime, "prime")
+	fmt.Println(primeLess, "prime less 100")
 }
 
 func main () {

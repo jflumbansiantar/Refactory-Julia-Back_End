@@ -106,34 +106,30 @@ import (
 	"os"
 )
 
-func Post() {
-	response, err := http.Get("https://jsonplaceholder.typicode.com/posts")
-	if err != nil {
-		fmt.Print(err.Error())
-		os.Exit(1)
-	}
-	responseData, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(string(responseData))
-}
 
-func User() {
-	response, err := http.Get("https://jsonplaceholder.typicode.com/users")
-	if err != nil {
-		fmt.Print(err.Error())
-		os.Exit(1)
-	}
-	responseData, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(string(responseData))
-}
 
 func main() {
-	Post()
-	User()
+response1, err := http.Get("https://jsonplaceholder.typicode.com/posts")
+	if err != nil {
+		fmt.Print(err.Error())
+		os.Exit(1)
+	}
+	responseData1, err := ioutil.ReadAll(response1.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(responseData1))
 
+	response2, err := http.Get("https://jsonplaceholder.typicode.com/users")
+	if err != nil {
+		fmt.Print(err.Error())
+		os.Exit(1)
+	}
+	responseData2, err := ioutil.ReadAll(response2.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// fmt.Println(string(responseData2))
+
+	
 }

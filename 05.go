@@ -20,23 +20,31 @@ package main
 import (
 	"fmt"
 	"strings"
+	
 )
 
-func Counting(str string) {
-	// var newSlice []string
+func Counting(str string) map[string]int {
 
-	strSlice := strings.Split(str, ",")
-	fmt.Println(strSlice, "slice")
+	letters := strings.Split(strings.ToLower(str), "")
 
-	for _, word := range strSlice {
+		counts := make(map[string]int)
+		for _, char := range letters {
+			
+			_, matched := counts[char]
 
-		fmt.Println(word, "slice2")
-		// for _, matched := range 
-	}
+			if matched {
+				counts[char] += '*'
+				
+			} else {
+				counts[char] = '*'
+			}
+		}
+		return (counts)
+	
 }
 
 func main () {
-	var input = "mammals"
+	var input = "Mammals is"
 
-	Counting(input)
+	fmt.Println(Counting(input))
 }

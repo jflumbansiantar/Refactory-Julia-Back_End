@@ -23,7 +23,6 @@ import (
 )
 
 func MissingLetter(s string) {
-	
 }
 
 func main () {

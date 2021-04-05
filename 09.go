@@ -24,6 +24,7 @@ import (
 	"sort"
 )
 
+
 func main () {
 	numbers := []int{3, 12, 4, 5, 8, 9}
 	sort.Ints(numbers)
