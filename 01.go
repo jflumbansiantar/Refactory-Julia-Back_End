@@ -32,16 +32,17 @@ import (
 	"log"
 	"fmt"
 	"strings"
+
 )
 
 
-func main() {
+type Product struct {
+	Name string
+	Category string
+	Price string
+}
 
-	type Product struct {
-      	Name string
-      	Category string
-      	Price string
-   	}
+func main() {
    
    	productline, err := csv.NewReader(CsvFile).ReadAll()
    	if err != nil {

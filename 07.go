@@ -18,21 +18,17 @@
 package main
 import "fmt"
 func SortOdd(numbers []int) []int {
- 
- 	for i := 0; i < len(numbers); i++ {
 
-		if numbers[i] % 2 == 0 {
-      		for j := 1; j < i; j++ {
-				if numbers[j-1] > numbers[j] {
-				   intermediate := numbers[j]
-				   numbers[j] = numbers[j-1]
-				   numbers[j-1] = intermediate
-			   }
-
-			} 
+	for i := 0; i < len(numbers); i++ {
+      	for j := 1; j < i; j++ {
+			if numbers[j-1] > numbers[j] {
+				if numbers[j-1] % 2 != 0 {
+					intermediate := numbers[j]
+					numbers[j] = numbers[j-1]
+					numbers[j-1] = intermediate
+				}
+		   }
 		} 
-	
-		
     }
    return numbers
  }

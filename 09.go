@@ -21,11 +21,19 @@
 package main 
 import (
 	"fmt"
-	"sort"
+	// "sort"
 )
 
 func main () {
 	numbers := []int{3, 12, 4, 5, 8, 9}
-	sort.Ints(numbers)
+	// sort.Ints(numbers)
+	
+	for i := 0; i <= len(numbers); i++ {
+		for j := 1; j < i; j++ {
+			if numbers[j-1] > numbers[j] {
+				numbers[j-1], numbers[j] = numbers[j], numbers[j-1]
+			}
+		} 
+	}
 	fmt.Println(numbers)
 }
