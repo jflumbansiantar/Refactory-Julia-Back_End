@@ -38,6 +38,8 @@ func main() {
     fmt.Println(SortOdd(a))
 }
 
+
+
 /** PSEUDOCODE
 for i = 0, i < len(numbers), i ++
 	for j = 1, j < i, j ++ 

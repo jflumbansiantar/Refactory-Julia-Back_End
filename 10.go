@@ -49,16 +49,10 @@ import (
 	// "bytes"
 )
 
-type Data struct {
-	userId string
-	id string
-	title string
-	body string
-	// user []string
-}
 
-func PostData(url string) {
-	response1, err := http.Get(url)
+func main() {
+	
+	response1, err := http.Get("https://jsonplaceholder.typicode.com/posts")
 	if err != nil {
 		fmt.Print(err.Error())
 		os.Exit(1)
@@ -69,12 +63,8 @@ func PostData(url string) {
 	}
 	
 	data1 := string(responseData1)
-
-	fmt.Println(data1)
-}
-
-func User(url string) {
-	response2, err := http.Get(url)
+	
+	response2, err := http.Get("https://jsonplaceholder.typicode.com/users")
 	if err != nil {
 		fmt.Print(err.Error())
 		os.Exit(1)
@@ -84,19 +74,30 @@ func User(url string) {
 		log.Fatal(err)
 	}
 	data2 := string(responseData2)
-	fmt.Println(data2)
-}
 
-func main() {
-	
-	var url1 = "https://jsonplaceholder.typicode.com/posts"
-	// var url2 = "https://jsonplaceholder.typicode.com/users"
-	
-	PostData(url1) 
+
+
+	fmt.Println(data1)
+	fmt.Println(data2)
 	
 	
+}
 	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//PSEUDOCODE-nya
 	/**
 	if responseData1.userId == responseData2.id {
@@ -123,4 +124,4 @@ func main() {
 	// }
 	// return merged
 	
-}
+// }
