@@ -52,13 +52,13 @@ func GroupBy(input int) {
 			}
 		}
 	}
-	fmt.Println(even, "even")
-	fmt.Println(odd, "odd")
-	fmt.Println(five, "five")
-	fmt.Println(prime, "prime")
-	fmt.Println(primeLess, "prime less 100")
+	fmt.Println(even, " ")
+	fmt.Println(odd, " ")
+	fmt.Println(five, " ")
+	fmt.Println(prime, " ")
+	fmt.Println(primeLess, " ", "prime less 100")
 }
 
 func main () {
-	GroupBy(1000)
+	GroupBy(10)
 }
